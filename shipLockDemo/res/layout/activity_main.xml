@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/fragment_mine_title" />
+
+    <LinearLayout
+        android:id="@+id/LayoutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_marginTop="10dip"
+            android:layout_weight="1.0" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dip"
+                    android:background="@anim/corner_set_bg"
+                    android:orientation="vertical"
+                    android:paddingBottom="10dip" >
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/ship_no"
+                        android:textSize="14sp" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/ship_no"
+                        style="@style/CustomEditText"
+                        android:layout_marginTop="2dip"
+                        android:imeOptions="actionNext" >
+                    </EditText>
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/ship_ownner_name"
+                        android:textSize="14sp" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/ship_ownner_name"
+                        style="@style/CustomEditText"
+                        android:layout_marginTop="2dip"
+                        android:imeOptions="actionNext" >
+                    </EditText>
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/mobile_tel_no"
+                        android:textSize="14sp" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/mobile_tel_no"
+                        style="@style/CustomEditText"
+                        android:layout_marginTop="2dip"
+                        android:digits="0123456789"
+                        android:inputType="number"
+                        android:imeOptions="actionNext"
+                        android:maxLength="11" >
+                    </EditText>
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/id_card"
+                        android:textSize="14sp" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/id_card"
+                        style="@style/CustomEditText"
+                        android:layout_marginTop="2dip"
+                        android:digits="0123456789Xx"
+                        android:imeOptions="actionNext"
+                        android:maxLength="18" >
+                    </EditText>
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/fee_A"
+                         >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/fee_A"
+                        style="@style/CustomEditText"
+                        android:layout_marginTop="2dip"
+                        android:imeOptions="actionNext"
+                        android:maxLength="40"
+                         >
+                    </EditText>
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/fee_B" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/fee_B"
+                        style="@style/CustomEditText"
+                        android:layout_marginTop="2dip"
+                        android:imeOptions="actionNext"
+                        android:maxLength="40" >
+                    </EditText>
+
+                    <TextView
+                        style="@style/CustomTextView"
+                        android:layout_marginTop="10dip"
+                        android:text="@string/fee_C" >
+                    </TextView>
+
+                    <EditText
+                        android:id="@+id/fee_C"
+                        style="@style/CustomEditText"
+                        android:layout_marginTop="2dip"
+                        android:imeOptions="actionDone"
+                        android:maxLength="40" >
+                    </EditText>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dip"
+            android:background="@drawable/divider_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:padding="20dip" >
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/title_login_selector"
+                android:text="@string/app_name"
+                android:textColor="@color/context_color"
+                android:textSize="20sp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutPB"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="@android:style/Widget.ProgressBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LayoutFalse"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_launcher" />
+"
+
+        <TextView
+            style="@style/CustomTextView"
+            android:text="@string/app_name"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>
