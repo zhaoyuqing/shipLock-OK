@@ -13,28 +13,28 @@ public class GexinSdkMsgReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Bundle bundle = intent.getExtras();
-		Log.d("GexinSdkDemo", "onReceive() action=" + bundle.getInt("action"));
+		Log.d("GexinSdkMsgReceiver", "onReceive() action=" + bundle.getInt("action"));
+		
+
 		switch (bundle.getInt(Consts.CMD_ACTION)) {
 
 		case Consts.GET_MSG_DATA:
 			// 获取透传数据
-			// String appid = bundle.getString("appid");
 			byte[] payload = bundle.getByteArray("payload");
 
 			if (payload != null) {
 				String data = new String(payload);
 
-				Log.d("GexinSdkDemo", "Got Payload:" + data);
+				Log.d("GexinSdkMsgReceiver", "Got Payload:" + data);
 
 			}
 			break;
 		case Consts.GET_CLIENTID:
 			// 获取ClientID(CID)
-			// 第三方应用需要将CID上传到第三方服务器，并且将当前用户帐号和CID进行关联，以便日后�?过用户帐号查找CID进行消息推�?
+			// 第三方应用需要将CID上传到第三方服务器，并且将当前用户帐号和CID进行关联，以便日后�?过用户帐号查找CID进行消息推�?
+			// 获取ClientID(CID)
 			String cid = bundle.getString("clientid");
-			Log.d("GexinSdkDemo", "Got Payload:" + cid);
-//			if (GexinSdkDemoActivity.tView != null)
-//				GexinSdkDemoActivity.tView.setText(cid);
+			Log.i("GexinSdkDemo", "Got ClientID:" + cid);
 			break;
 
 		case Consts.THIRDPART_FEEDBACK:
@@ -45,11 +45,11 @@ public class GexinSdkMsgReceiver extends BroadcastReceiver {
 			String result = bundle.getString("result");
 			long timestamp = bundle.getLong("timestamp");
 
-			Log.d("GexinSdkDemo", "appid:" + appid);
-			Log.d("GexinSdkDemo", "taskid:" + taskid);
-			Log.d("GexinSdkDemo", "actionid:" + actionid);
-			Log.d("GexinSdkDemo", "result:" + result);
-			Log.d("GexinSdkDemo", "timestamp:" + timestamp);
+			Log.d("GexinSdkMsgReceiver", "appid:" + appid);
+			Log.d("GexinSdkMsgReceiver", "taskid:" + taskid);
+			Log.d("GexinSdkMsgReceiver", "actionid:" + actionid);
+			Log.d("GexinSdkMsgReceiver", "result:" + result);
+			Log.d("GexinSdkMsgReceiver", "timestamp:" + timestamp);
 			break;
 		default:
 			break;

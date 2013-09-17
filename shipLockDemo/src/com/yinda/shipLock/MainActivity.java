@@ -43,6 +43,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 		initResponseHandler();
 		
+		
 //		m_AsyncHttpClient.post(m_strURL, m_RequestParams, m_responseHandlerGet);
 		MessageManager.getInstance().initialize(this.getApplicationContext());
 	}
@@ -100,6 +101,7 @@ public class MainActivity extends Activity implements OnClickListener {
 				m_PB.setVisibility(View.GONE);
 				Toast.makeText(getApplicationContext(),e.toString(), Toast.LENGTH_LONG).show();
 				m_AsyncHttpClient.delete(m_strURL, m_responseHandlerPost);
+				
 			}
 
 		};
@@ -130,8 +132,8 @@ public class MainActivity extends Activity implements OnClickListener {
 				+ "<upass enc_type=\"md5\">" + "按时发工资" + "</upass>"
 				+ "</body>" + "</root>";
 
-//		m_AsyncHttpClient.post("http://192.168.27.118:8080/shiplock/loginAction", m_RequestParams, m_responseHandlerPost);
-		m_AsyncHttpClient.postMine(m_strURL, new StringEntity(strData),m_responseHandlerPost);	
+		m_AsyncHttpClient.post("http://192.168.27.118:8080/shiplock/loginAction", m_RequestParams, m_responseHandlerPost);
+//		m_AsyncHttpClient.postMine(m_strURL, new StringEntity(strData),m_responseHandlerPost);	
 		
 		
 
